@@ -1,7 +1,7 @@
 ---
 - hosts: dev
   become: true
-  tasks
+  tasks:
     - name: update cache
       apt:
         update_cache: yes
