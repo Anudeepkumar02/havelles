@@ -16,7 +16,7 @@
     - name: start the docker container
       docker_container:
         name: sony
-        image: "2222s/havells:V-2"
+        image: "2222s/havells:V-3"
         state: started
         published_ports:
           - 0.0.0.0:82:8080 
