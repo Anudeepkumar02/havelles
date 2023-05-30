@@ -1,0 +1,23 @@
+---
+- hosts: dev
+  become: true
+  tasks
+    - name: update cache
+      apt:
+        update_cache: yes
+    - name: pip install
+      apt:
+        name: python3-pip
+        state: present
+    - name: Install docker-py module
+      pip:
+        name: docker-py
+        state: present
+    - name: start the docker container
+      docker_container:
+        name: sony
+        image: "2222s/sony:V-64"
+        state: started
+        published_ports:
+          - 0.0.0.0:82:8080 
+          - 0.0.0.0:83:8080
